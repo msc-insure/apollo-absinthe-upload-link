@@ -2,11 +2,12 @@ import { isFileList, isObject, isUploadFile } from './validators'
 
 const extractFiles = variables => {
   const files = []
-  const walkTree = (tree, path = []) => {
+  const walkTree = (tree, path) => {
     const mapped = Array.isArray(tree) ? tree : Object.assign({}, tree)
+
     Object.keys(mapped).forEach(key => {
       const value = mapped[key]
-      const name = [...path, key].join('.')
+      const name = path ? [path, key].join('.') : key
 
       if (isUploadFile(value) || isFileList(value)) {
         const file = isFileList(value)
@@ -24,7 +25,7 @@ const extractFiles = variables => {
   }
 
   return {
-    files,
+    files: files,
     variables: walkTree(variables),
   }
 }
