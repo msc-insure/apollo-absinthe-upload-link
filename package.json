@@ -1,10 +1,9 @@
 {
   "name": "@msc-insure/apollo-absinthe-upload-link",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "A network interface for Apollo that enables file-uploading to Absinthe back ends.",
   "main": "lib/index.js",
   "module": "lib/index.js",
-  "repository": "https://github.com/bytewitchcraft/apollo-absinthe-upload-link",
   "author": "Ihor Katkov",
   "license": "MIT",
   "scripts": {
